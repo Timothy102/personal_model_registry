@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import SideBarLayout from '../../layout/SideBarLayout';
 import BenchmarkButton from '../../components/Benchmark';
 import SuccessfulCopyAlert from '../../components/SuccessfulCopy';
-import UserUsageButton from '../../components/UserUsage';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -44,7 +43,7 @@ const ModelDetails: React.FC = () => {
     const fetchModelDetails = async () => {
       setIsLoading(true);
       try {
-        const modelResponse = await fetch(`http://localhost:8000/get_model_by_name/${modelName}`);
+        const modelResponse = await fetch(`https://arcadia-backend-m22shwtlv-teamrywaveios-projects.vercel.app/get_model_by_name/${modelName}`);
         if (modelResponse.ok) {
           const modelData = await modelResponse.json();
           setModel(modelData as Model);
@@ -107,7 +106,7 @@ const ModelDetails: React.FC = () => {
                   type="button"
                   className="rounded-md bg-indigo-50 px-2.5 py-1.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100 mr-2"
                 >
-                  {model?.github_url || 'N/A'}
+                  {model?.run_count || 'N/A'}
                 </button>
                 <button
                   type="button"

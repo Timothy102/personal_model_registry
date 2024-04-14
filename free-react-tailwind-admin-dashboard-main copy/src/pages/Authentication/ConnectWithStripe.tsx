@@ -8,7 +8,7 @@ const ConnectToStripe: React.FC = () => {
   // Function to fetch the OAuth link from the backend
   const connectToStripe = async () => {
     try {
-      const response = await fetch('http://localhost:8000/stripe/oauth'); 
+      const response = await fetch('https://arcadia-backend-m22shwtlv-teamrywaveios-projects.vercel.app/stripe/oauth'); 
       const data = await response.json()// Replace with your backend endpoint
       setOAuthLink(data.oauth_link);
       console.log('Stripe OAuth link:', data.oauth_link);

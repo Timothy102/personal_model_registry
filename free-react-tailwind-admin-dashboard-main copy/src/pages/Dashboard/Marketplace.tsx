@@ -34,7 +34,7 @@ const Marketplace: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/my_models?owner=camenduru');
+      const response = await fetch('https://arcadia-backend-m22shwtlv-teamrywaveios-projects.vercel.app/my_models?owner=camenduru');
       if (response.ok) {
         const data = await response.json();
         setModels(data);
