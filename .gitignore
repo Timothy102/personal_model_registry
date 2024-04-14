@@ -1,3 +1,4 @@
 venv/
 *.pkl
 free-react-tailwind-admin-dashboard-main copy/node_modules/*
+.vercel
