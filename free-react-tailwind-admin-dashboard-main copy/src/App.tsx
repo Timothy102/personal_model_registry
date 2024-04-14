@@ -35,7 +35,6 @@ function App() {
             </>
           }
         />
-        <Route path="models/:modelName" element={<ModelDetails />} />
         <Route
           path="/create"
           element={
@@ -45,6 +44,7 @@ function App() {
             </>
           }
         />
+        <Route path="models/:modelName" element={<ModelDetails />} />
         <Route
           path="/auth/stripe"
           element={
